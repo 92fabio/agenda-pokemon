@@ -12,6 +12,7 @@ namespace pokemon_agenda
 {
     public partial class FmCadastroPokemon : Form
     {
+     
         public FmCadastroPokemon()
         {
             InitializeComponent();
@@ -24,18 +25,28 @@ namespace pokemon_agenda
             cbTipo.SelectedIndex = -1;
             numNivel.Value = 1;
 
-
             txtNome.Focus();
         }
-
+        /* objetivo da aula: apreder a criar e atulizar objetos
+        * mini gamer pokemon
+        * 1- montar um time pokemon (6 pokemon)
+        * 2- treinar esse meu time pokemon (a cada treinamneto ele recebe 2 nivel)
+        * 3- batalhar com esse pokemon de forma rondonica
+        * sistema vai sortear 1 e 6 pokemon (somentes os 151 primeiros)
+        */
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             string nomePokemon = txtNome.Text; //textBox
             string tipoPokemon = cbTipo.Text; //comboBox
             int nivelPokemon =  (int)numNivel.Value; //numericUpDown
 
-            MessageBox.Show($"o Pokémon {nomePokemon} do tipo {tipoPokemon} " +
-                $"foi cadastrado com o nivel {nivelPokemon}");
+            Pokemon poke = new Pokemon(nomePokemon, tipoPokemon, nivelPokemon);
+
+            poke.fnDescricao();
+
+            //MessageBox.Show($"o Pokémon {nomePokemon} do tipo {tipoPokemon} " +
+                //$"foi cadastrado com o nivel {nivelPokemon}");
 
             fnLimpar();
         }
