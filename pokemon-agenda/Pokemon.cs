@@ -7,35 +7,65 @@ using System.Windows.Forms;
 
 namespace pokemon_agenda
 {
-    internal class Pokemon
+
+    // public
+    // intern
+    // private
+    public class Pokemon
     {
         // nome do pokemon
         // tipo do pokemon
         // nivel do pokemon
         // vida do pokemon
         // dano do pokemon
-        string Nome;
-        string Tipo;
-        int Nivel;
-        int Vida;
-        int Dano;
 
-        // Criação da função de inicialização padrão do meu objeto
+
+        // get set
+        public string Nome { get;  set; }
+        public string Tipo { get; set; }
+        public int Nivel { get; set; }
+        public int Vida { get; set; }
+        public int Dano { get; set; }
+
+
+        /// <summary>
+        /// Inicializa o construtor da minha classe padrão de <c>Pokemon</c>
+        /// (<paramref name="nomePokemon"/>, <paramref name="tipoPokemon"/>, <paramref name="nivelPokemon"/>)
+        /// 
+        /// <list type="bullet">
+        /// <item>nomePokemon: variavel para saber o nome</item>
+        /// <item>tipoPokemon: variavel para saber o nome</item>
+        /// <item>nivelPokemon: variavel para saber o nome</item>
+        /// </list>
+        /// </summary>
+        /// <returns>
+        /// A Class Pokemon retorna um objeto com todas as funções que tem relação ao treinamento do pokemon
+        /// </returns>
+        /// <param name="nomePokemon">Vai ser o nome que o pokemon vai ser chamado</param>
+        /// <param name="tipoPokemon">Define o tipo do elemento que o pokemon tem afinidade</param>
+        /// <param name="nivelPokemon">O nivel que o pokemon foi encontrado</param>
         public Pokemon(string nomePokemon, string tipoPokemon, int nivelPokemon)
         {
-            //Nome = "Pikachu";
-            //Tipo = "Elétrico";
-            //Nivel = 5;
+
+            // Nome = "Pikachu";
+            // Tipo = "Elétrico";
+            // Nivel = 5;
+
             Nome = nomePokemon;
             Tipo = tipoPokemon;
             Nivel = nivelPokemon;
-            Vida = 100;
-            Dano = 20;
+
+            Vida = nivelPokemon * 70;
+            Dano = nivelPokemon * 15;
         }
 
-        // public posso usar da função em qualquer espaço do meu projeto
-        // private posso usar a função somente no meu arquivo original
-       public void fnDescricao()
+        /// <summary>
+        /// Exibe a descrição dos dados de informação dos pokemon, nome, tipo, nivel, vida, dano
+        /// </summary>
+        /// <returns>
+        /// a função <see cref="fnDescricao"/> não retorna nada
+        /// </returns>
+        public void fnDescricao()
         {
             MessageBox.Show($"pokemon: {Nome}, Tipo: {Tipo}, " +
                 $"Nivel: {Nivel}, Vida: {Vida}, Dano: {Dano}");
