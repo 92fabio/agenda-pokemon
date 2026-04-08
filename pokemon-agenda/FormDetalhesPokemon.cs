@@ -16,5 +16,10 @@ namespace pokemon_agenda
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
